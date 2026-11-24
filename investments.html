@@ -130,6 +130,21 @@
       <footer>
         <span>Խնայողությունների կառավարում</span><span>Ներդրումներ</span>
       </footer>
-    </main>
+    </main> 
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    document.querySelectorAll('.topic-card, .content-card, .panel').forEach((el) => {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  </script>
+
   </body>
 </html>
